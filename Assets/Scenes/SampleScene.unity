@@ -1289,7 +1289,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4315847536170881679, guid: 65926f106d0bc894693413e7e018a554, type: 3}
   m_PrefabInstance: {fileID: 4315847535920016098}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1903442036
+--- !u!114 &1903442043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9199c5274cbe1459098ca2c7f24071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 80
 --- !u!1 &1957387760
 GameObject:
   m_ObjectHideFlags: 0
