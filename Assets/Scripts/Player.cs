@@ -13,21 +13,17 @@ namespace GhostGame
         public CharacterController controller; 
         public Animator animator; 
         Vector2 movement;
-
         public PlayerStatistics localPlayerData = new PlayerStatistics();
-        Vector3 position; 
-
-        public bool isInRoom = false; 
 
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            isInRoom = false;
             if (GlobalControl.Instance.savedPlayerData.position != null)
             {
                 localPlayerData = GlobalControl.Instance.savedPlayerData;
                 transform.position = localPlayerData.position;
+                print(localPlayerData.health);
             }
         }
 

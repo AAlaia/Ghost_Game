@@ -6,11 +6,17 @@ namespace GhostGame
 {
     public class Health : MonoBehaviour
     {
-        public int health = 100;
+        public int health; 
+
+        void Start()
+        {
+            health = GlobalControl.Instance.savedPlayerData.health;
+        }
 
         void takeDamage(int damage)
         {
             health -= damage;
+            GlobalControl.Instance.savedPlayerData.health = health;
         }
 
         public int getHealth()

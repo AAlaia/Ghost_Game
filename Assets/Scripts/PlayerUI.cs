@@ -8,7 +8,7 @@ namespace GhostGame
 
     public class PlayerUI : MonoBehaviour
     {
-       Health playerHealth;
+        Health playerHealth;
         public Image [] blocks;
         int healthNum = 0;
 

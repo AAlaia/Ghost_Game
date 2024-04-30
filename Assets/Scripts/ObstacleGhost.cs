@@ -14,6 +14,7 @@ namespace GhostGame
         public Animator animator; 
         Vector2 movement; 
         private bool trigEvent = false; 
+        Health health; 
 
         // Start is called before the first frame update
         void Start()
@@ -60,6 +61,7 @@ namespace GhostGame
         {
             trigEvent = true; 
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            health.tryDamage(other.gameObject, 2);
         }
 
         public void OnTriggerExit2D(Collider2D other)
