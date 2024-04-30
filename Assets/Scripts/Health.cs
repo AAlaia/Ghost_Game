@@ -6,7 +6,7 @@ namespace GhostGame
 {
     public class Health : MonoBehaviour
     {
-        public int health = 100;
+        public int health;
 
         void takeDamage(int damage)
         {
