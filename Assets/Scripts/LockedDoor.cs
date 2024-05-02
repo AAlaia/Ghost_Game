@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 namespace GhostGame
 {
     public class LockedDoor : MonoBehaviour
-{
+    {
     [SerializeField] private Text interactableName;
     private string interactionText = "Interact [E]";
 
@@ -67,8 +67,8 @@ namespace GhostGame
                 foundItem = true; 
             }
         }
+
     }
 
-}
-
+    }
 }

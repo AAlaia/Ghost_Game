@@ -18,7 +18,14 @@ namespace GhostGame
 
         void Start()
         {
-            mgr = FindObjectOfType<InvManager>(); 
+            mgr = FindObjectOfType<InvManager>();
+            foreach (Items i in GlobalControl.Instance.savedPlayerData.inventory.items)
+            {
+                if (i.name == itemName)
+                {
+                    Destroy(gameObject);
+                }
+            } 
         }
 
 
@@ -32,6 +39,7 @@ namespace GhostGame
                 {
                     // interactableName.text = finishedInteraction;
                     mgr.items.Add(newItem); 
+                    GlobalControl.Instance.savedPlayerData.inventory = mgr; 
                     interactableName.text = "";
                     Destroy(gameObject); 
                 }

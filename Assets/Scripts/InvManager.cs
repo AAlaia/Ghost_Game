@@ -8,6 +8,14 @@ namespace GhostGame
     {
         public List<Items> items = new List<Items>(); 
 
+        void Start()
+        {
+            if (GlobalControl.Instance.savedPlayerData.inventory.items != null)
+            {
+                items = GlobalControl.Instance.savedPlayerData.inventory.items; 
+            }
+        }
+
         public void PrintList()
         {
             if (Input.GetKeyDown(KeyCode.Q))

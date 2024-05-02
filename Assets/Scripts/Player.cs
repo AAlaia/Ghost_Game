@@ -23,7 +23,6 @@ namespace GhostGame
             {
                 localPlayerData = GlobalControl.Instance.savedPlayerData;
                 transform.position = localPlayerData.position;
-                print(localPlayerData.health);
             }
         }
 

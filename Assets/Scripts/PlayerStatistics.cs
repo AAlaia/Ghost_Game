@@ -8,6 +8,7 @@ namespace GhostGame
     {
         public Vector3 position; 
         public int health = 50;
+        public InvManager inventory; 
     }
 
 }
