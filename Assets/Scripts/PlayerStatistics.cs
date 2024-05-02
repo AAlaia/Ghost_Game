@@ -7,7 +7,7 @@ namespace GhostGame
     public class PlayerStatistics
     {
         public Vector3 position; 
-        public int health = 70; 
+        public int health = 50;
     }
 
 }
