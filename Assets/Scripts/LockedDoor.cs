@@ -16,6 +16,7 @@ namespace GhostGame
     private bool isOpened = false;
 
     private bool foundItem = false; 
+    private bool objectAlreadyFound = false; 
 
     [SerializeField] private string itemNeeded; 
 
@@ -43,6 +44,7 @@ namespace GhostGame
         if (foundItem)
         {
             isOpened = true; 
+            objectAlreadyFound = true;
         }
         else
         {
@@ -59,13 +61,21 @@ namespace GhostGame
 
     private void searchForItem()
     {
-        foreach (Items i in mgr.items)
+        if (!objectAlreadyFound)
         {
-            if (string.Equals(i.name, itemNeeded))
+            foreach (Items i in mgr.items)
             {
-                interactableName.text = "Door unlocked!"; 
-                foundItem = true; 
+                if (string.Equals(i.name, itemNeeded))
+                {
+                    interactableName.text = "Door unlocked!"; 
+                    foundItem = true; 
+                }
             }
+
+        }
+        else
+        {
+            interactableName.text = "Interact [E]"; 
         }
 
     }
