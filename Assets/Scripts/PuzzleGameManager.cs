@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace GhostGame
 {
@@ -18,12 +19,18 @@ namespace GhostGame
         public List<Texture2D> imageTextures;
         public Transform levelSelectPanel;
         public Image levelSelectPrefab;
+        
+
 
 
         private List<Transform> pieces;
         private Vector2Int dimensions;
         private float width;
         private float height;
+
+        private Transform draggingPiece = null;
+        private Vector3 offset;
+        private int piecesCorrect;
         
 
         // Start is called before the first frame update
@@ -35,6 +42,34 @@ namespace GhostGame
                 image.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
 
                 image.GetComponent<Button>().onClick.AddListener(delegate { StartGame(texture); });
+            }
+        }
+
+        void Update()
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if(hit)
+                {
+                    draggingPiece = hit.transform;
+                    offset = draggingPiece.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    offset += Vector3.back;
+                }
+            }
+
+            if(draggingPiece && Input.GetMouseButtonUp(0))
+            {
+                SnapAndDisableIfCorrect();
+                draggingPiece.position += Vector3.forward;
+                draggingPiece = null;
+            }
+
+            if(draggingPiece)
+            {
+                Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                newPosition += offset;
+                draggingPiece.position = newPosition;
             }
         }
 
@@ -51,6 +86,8 @@ namespace GhostGame
             Scatter();
 
             UpdateBorder();
+
+            piecesCorrect = 0;
         }
 
         Vector2Int GetDimensions(Texture2D jigsawTexture,int difficulty) 
@@ -138,7 +175,7 @@ namespace GhostGame
             float borderZ = 0f;
 
 
-            lineRenderer.SetPosition(0, new Vector3(-halfWidth, halfWidth, borderZ));
+            lineRenderer.SetPosition(0, new Vector3(-halfWidth, halfHeight, borderZ));
             lineRenderer.SetPosition(1, new Vector3(halfWidth, halfHeight, borderZ));
             lineRenderer.SetPosition(2, new Vector3(halfWidth, -halfHeight, borderZ));
             lineRenderer.SetPosition(3, new Vector3(-halfWidth, -halfHeight, borderZ));
@@ -147,6 +184,29 @@ namespace GhostGame
             lineRenderer.endWidth = 0.1f;
 
             lineRenderer.enabled = true;
+        }
+
+        private void SnapAndDisableIfCorrect()
+        {
+            int pieceIndex = pieces.IndexOf(draggingPiece);
+
+            int col = pieceIndex % dimensions.x;
+            int row = pieceIndex / dimensions.x;
+
+            Vector2 targetPosition = new((-width * dimensions.x / 2) + (width * col) + (width / 2), (-height * dimensions.y / 2) + (height * row) + (height / 2));
+
+            if (Vector2.Distance(draggingPiece.localPosition, targetPosition) < (width / 2))
+            {
+                draggingPiece.localPosition = targetPosition;
+
+                draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
+
+                piecesCorrect++;
+                if (piecesCorrect == pieces.Count)
+                {
+                    SceneManager.LoadScene("DestineysScene");
+                }
+            }
         }
 
         
