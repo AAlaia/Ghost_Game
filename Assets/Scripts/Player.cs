@@ -14,6 +14,7 @@ namespace GhostGame
         public Animator animator; 
         Vector2 movement;
         public PlayerStatistics localPlayerData = new PlayerStatistics();
+        Inventory mgr; 
 
         // Start is called before the first frame update
         void Start()
