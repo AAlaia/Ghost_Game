@@ -8,7 +8,7 @@ namespace GhostGame
     [RequireComponent(typeof(Rigidbody2D))]
     public class Player : MonoBehaviour
     {
-        private float speed = 5f; 
+        [SerializeField] private float speed = 5f; 
         Rigidbody2D rb; 
         public CharacterController controller; 
         public Animator animator; 

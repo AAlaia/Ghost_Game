@@ -1,0 +1,4 @@
+repository "Ghost_Game@aa1101069@cloud"
+  path "/"
+    br "/main"
+    co "/main"

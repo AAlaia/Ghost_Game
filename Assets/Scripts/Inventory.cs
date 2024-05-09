@@ -10,6 +10,7 @@ namespace GhostGame
         InvManager mgr; 
         [SerializeField] private Text interactableName;
         [SerializeField] private string itemName;
+        [SerializeField] GameObject text; 
         private string interactionText = "Pick Up [E]"; 
        //  private string finishedInteraction = "Item acquired."; 
         private Items newItem = new Items(); 
@@ -40,8 +41,10 @@ namespace GhostGame
                     // interactableName.text = finishedInteraction;
                     mgr.items.Add(newItem); 
                     GlobalControl.Instance.savedPlayerData.inventory = mgr; 
+                    gameObject.GetComponent<DialogueActiviation>().ActivateDialogue();  
                     interactableName.text = "";
                     Destroy(gameObject); 
+
                 }
             }
 
