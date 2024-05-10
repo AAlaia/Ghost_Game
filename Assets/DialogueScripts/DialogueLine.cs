@@ -30,15 +30,13 @@ namespace GhostGame
 
         public void Awake()
         {
-            textHolder = GetComponent<Text>(); 
-            textHolder.text = ""; 
-
             imageHolder.sprite = character; 
             imageHolder.preserveAspect = true; 
         }
 
-        private void Start()
+        private void OnEnable()
         {
+            ResetLine(); 
             lineAppear = WriteText(input, textHolder, textColor, textFont, delay, sound, delayBetweenLines);
             StartCoroutine(lineAppear); 
         }
@@ -57,6 +55,13 @@ namespace GhostGame
                     finished = true; 
                 }
             }
+        }
+
+        private void ResetLine()
+        {
+            textHolder = GetComponent<Text>(); 
+            textHolder.text = ""; 
+            finished = false;
         }
 
     }

@@ -41,8 +41,7 @@ namespace GhostGame
                     // interactableName.text = finishedInteraction;
                     mgr.items.Add(newItem); 
                     GlobalControl.Instance.savedPlayerData.inventory = mgr; 
-                    gameObject.GetComponent<DialogueActiviation>().ActivateDialogue();  
-                    interactableName.text = "";
+                    gameObject.GetComponent<DialogueActiviation>().ActivateDialogue(); 
                     Destroy(gameObject); 
 
                 }

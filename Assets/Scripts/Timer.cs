@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] Text timerText; 
-    [SerializeField] float remainingTime;
+    public Text timerText; 
+    [SerializeField] public float remainingTime;
 
     // Update is called once per frame
     void Update()

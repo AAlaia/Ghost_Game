@@ -17,7 +17,7 @@ namespace GhostGame
             player = other.gameObject.GetComponent<Health>(); 
             if (player != null)
             {
-                player.health -= (int) (1f * Time.deltaTime); 
+                player.health -= 1; 
             }
 
         }

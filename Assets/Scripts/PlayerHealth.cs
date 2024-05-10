@@ -7,13 +7,14 @@ namespace GhostGame
 {
     public class PlayerHealth : MonoBehaviour
     {
+        [SerializeField] private int scene; 
 
         // Update is called once per frame
         void Update()
         {
             if (!stillAlive())
             {
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene(scene);
             }
         }
 

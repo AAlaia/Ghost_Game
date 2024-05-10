@@ -18,6 +18,8 @@ namespace GhostGame
     private bool foundItem = false; 
     private bool objectAlreadyFound = false; 
 
+    private bool alreadySaid = false; 
+
     [SerializeField] private string itemNeeded; 
 
     InvManager mgr; 
@@ -48,7 +50,9 @@ namespace GhostGame
         }
         else
         {
-            interactableName.text = "The door is locked.";
+            gameObject.GetComponent<DialogueActiviation>().ActivateDialogue(); 
+            interactableName.text = "Interact [E]"; 
+            
         }
         GlobalControl.Instance.savedPlayerData.position = transform.position; 
     }
@@ -67,7 +71,6 @@ namespace GhostGame
             {
                 if (string.Equals(i.name, itemNeeded))
                 {
-                    interactableName.text = "Door unlocked!"; 
                     foundItem = true; 
                 }
             }
@@ -75,7 +78,7 @@ namespace GhostGame
         }
         else
         {
-            interactableName.text = "Interact [E]"; 
+            interactableName.text = "Interact [E]";
         }
 
     }

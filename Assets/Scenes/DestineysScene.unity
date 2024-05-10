@@ -1096,6 +1096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableName: {fileID: 777478098}
   itemName: Rusty Key
+  text: {fileID: 0}
 --- !u!114 &1658614838 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3699183879575005986, guid: 8e61159e034b40744a9007c70fef4523, type: 3}
@@ -1310,6 +1311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableName: {fileID: 777478098}
   itemName: Red Key
+  text: {fileID: 0}
 --- !u!1 &1903442025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4315847536170881675, guid: 65926f106d0bc894693413e7e018a554, type: 3}
@@ -1345,6 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4ada97899e6544c88b46f808a5da39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scene: 8
 --- !u!1 &1957387760
 GameObject:
   m_ObjectHideFlags: 0

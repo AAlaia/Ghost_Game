@@ -6,9 +6,11 @@ namespace GhostGame
 {
     public class DialogueHolder : MonoBehaviour
     {
+        // this class is for things like doors or ghosts, not a one time interaction. 
         private IEnumerator dialogueSeq; 
+        private bool dialogueFinished; 
 
-        private void Awake()
+        private void OnEnable()
         {
             dialogueSeq = dialogueSequence(); 
             StartCoroutine(dialogueSeq);
@@ -25,12 +27,23 @@ namespace GhostGame
         }
         private IEnumerator dialogueSequence()
         {
-            for (int i = 0; i < transform.childCount; i++)
+            if (!dialogueFinished)
             {
-                Deactivate(); 
-                transform.GetChild(i).gameObject.SetActive(true);
-                yield return new WaitUntil(() => transform.GetChild(i).GetComponent<DialogueLine>().finished); 
+                for (int i = 0; i < transform.childCount - 1; i++)
+                {
+                    Deactivate(); 
+                    transform.GetChild(i).gameObject.SetActive(true);
+                    yield return new WaitUntil(() => transform.GetChild(i).GetComponent<DialogueLine>().finished); 
+                }
             }
+            else // code is kinda choppy here and repeats so remind me to fix it later
+            {
+                int index = transform.childCount - 1;
+                Deactivate(); 
+                transform.GetChild(index).gameObject.SetActive(true);
+                yield return new WaitUntil(() => transform.GetChild(index).GetComponent<DialogueLine>().finished); 
+            }
+            dialogueFinished = true; 
             gameObject.SetActive(false); 
         }
 
