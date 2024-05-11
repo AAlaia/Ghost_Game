@@ -53,6 +53,12 @@ namespace GhostGame
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("speed", movement.sqrMagnitude);
 
+            if (movement != Vector2.zero)
+            {
+                animator.SetFloat("LastHorizontal", movement.x);
+                animator.SetFloat("LastVertical", movement.y); 
+            }
+
 
         }
 
