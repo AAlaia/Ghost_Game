@@ -24,15 +24,16 @@ namespace GhostGame
             endTimer = gameObject.GetComponent<Timer>(); 
             if (timer <= 0f)
             {
-                int index = Random.Range(0, 3);
-                Vector2 randomSpawnPos = new Vector2(Random.Range(-10.84f, 10.8f), Random.Range(1.12f, -5.27f)); 
+                int index = Random.Range(0, 4);
+                Vector2 randomSpawnPos = new Vector2(Random.Range(-12.74f, 8.93f), Random.Range(-51.79f, -58.3f)); 
                 Instantiate(fruits[index], randomSpawnPos, Quaternion.identity); 
-                timer = Random.Range(1f, 3f);
+                timer = Random.Range(0f, 2f);
             }
             if (endTimer.remainingTime <= 0)
             {
+                GlobalControl.Instance.savedPlayerData.stopSpawningFruit = true; 
                 endTimer.timerText.text = ""; 
-                ending.finishedGame = true; 
+                ending.finishedGame = true;
                 Destroy(gameObject); 
             }
         }

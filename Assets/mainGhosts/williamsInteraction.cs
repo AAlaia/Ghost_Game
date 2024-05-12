@@ -10,6 +10,8 @@ namespace GhostGame
         InvManager inv; 
         [SerializeField] private string name; 
         [SerializeField] private GameObject reward; 
+
+        [SerializeField] private GameObject beginSearch; 
         private bool bearFound = false; 
         private bool isInteract = false;
         [SerializeField] Text text; 
@@ -40,6 +42,7 @@ namespace GhostGame
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         gameObject.GetComponent<GhostObjective>().ActivateGhostDialogue();
+                        beginSearch.SetActive(true); 
                     } 
                 }   
             }

@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: 79d577334db903e49a3c9219a33fc948
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 2dece771e471943439a79d118c841d39
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DestineysScene.unity
     guid: 62ffa4828da8e7b40986e27154c7b05a
   - enabled: 1
@@ -32,7 +32,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 45c0f428375aa6c4ba37354ab3a0e991
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OliversRoom.unity
     guid: d4794f80a692d6446b600394599cae66
+  - enabled: 0
+    path: Assets/Scenes/StartHouse.unity
+    guid: 278d515dad6ef1046b3f9fb988b2a2a6
+  - enabled: 1
+    path: Assets/Scenes/Entrance.unity
+    guid: 9f200f1b28d97274c8f2d0df90eca81e
+  - enabled: 0
+    path: Assets/Scenes/TestHallway.unity
+    guid: 51696d5bc1894db45847eb3ff6dd338c
+  - enabled: 0
+    path: Assets/Scenes/FirstFloor.unity
+    guid: c5589c02c689a0e4ba6aecb60bef1ac4
   m_configObjects: {}

@@ -15,7 +15,7 @@ namespace GhostGame
 
     private void GetPoints()
     {
-        points = new List<Vector3>();
+        points = new List<Vector3>(); 
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -24,8 +24,11 @@ namespace GhostGame
             Vector3 point = child.transform.position;
             points.Add(point);
 
+
             child.SetActive(false);
         }  
+        points.Clear(); 
+        GetPoints(); 
     }
 
     public bool TryGetPoints(int index, out Vector3 point)

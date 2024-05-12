@@ -9,18 +9,16 @@ namespace GhostGame
     public class LockedDoor : MonoBehaviour
     {
     [SerializeField] private Text interactableName;
+    [SerializeField] private string itemNeeded;
+    [SerializeField] private GameObject spawner;  
+    [SerializeField] private AudioSource doorOpen; 
     private string interactionText = "Interact [E]";
-
-    [SerializeField] private int scene; 
 
     private bool isOpened = false;
 
     private bool foundItem = false; 
+
     private bool objectAlreadyFound = false; 
-
-    private bool alreadySaid = false; 
-
-    [SerializeField] private string itemNeeded; 
 
     InvManager mgr; 
 
@@ -35,7 +33,8 @@ namespace GhostGame
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene(scene);
+                mgr.transform.position = spawner.transform.position; 
+                doorOpen.enabled = true; 
             }
         }
     }

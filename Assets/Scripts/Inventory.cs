@@ -9,10 +9,9 @@ namespace GhostGame
     {
         InvManager mgr; 
         [SerializeField] private Text interactableName;
-        [SerializeField] private string itemName;
-        [SerializeField] GameObject text; 
+        [SerializeField] private string itemName; 
         private string interactionText = "Pick Up [E]"; 
-       //  private string finishedInteraction = "Item acquired."; 
+        private string finishedInteraction = "Item acquired."; 
         private Items newItem = new Items(); 
         private bool isPickUp = false; 
 
@@ -38,7 +37,7 @@ namespace GhostGame
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    // interactableName.text = finishedInteraction;
+                    interactableName.text = finishedInteraction;
                     mgr.items.Add(newItem); 
                     GlobalControl.Instance.savedPlayerData.inventory = mgr; 
                     gameObject.GetComponent<DialogueActiviation>().ActivateDialogue(); 

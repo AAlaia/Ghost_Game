@@ -8,6 +8,8 @@ namespace GhostGame
     {
         // single use dialogue
         private IEnumerator dialogueSeq; 
+        [SerializeField] private GameObject endingAchieved; 
+        [SerializeField] private bool shouldSpawn; 
 
         private void Awake()
         {
@@ -32,6 +34,7 @@ namespace GhostGame
                 transform.GetChild(i).gameObject.SetActive(true);
                 yield return new WaitUntil(() => transform.GetChild(i).GetComponent<DialogueLine>().finished); 
             }
+            endingAchieved.SetActive(shouldSpawn);  
             gameObject.SetActive(false); 
         }
 

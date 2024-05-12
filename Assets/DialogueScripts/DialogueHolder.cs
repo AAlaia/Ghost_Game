@@ -8,10 +8,10 @@ namespace GhostGame
     {
         // this class is for things like doors or ghosts, not a one time interaction. 
         private IEnumerator dialogueSeq; 
-        private bool dialogueFinished; 
-
+        public bool dialogueFinished; 
         private void OnEnable()
         {
+
             dialogueSeq = dialogueSequence(); 
             StartCoroutine(dialogueSeq);
         }

@@ -13,14 +13,7 @@ namespace GhostGame
 
     [SerializeField] private int scene; 
 
-    private bool isOpened = false; 
-
-    [SerializeField] Player player; 
-
-    void Start()
-    {
-        player.transform.position = transform.position; 
-    }
+    private bool isOpened = false;
     void Update()
     {
         if (isOpened)

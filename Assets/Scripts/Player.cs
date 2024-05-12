@@ -13,7 +13,6 @@ namespace GhostGame
         public CharacterController controller; 
         public Animator animator; 
         Vector2 movement;
-        public PlayerStatistics localPlayerData = new PlayerStatistics();
         Inventory mgr; 
 
         // Start is called before the first frame update
@@ -22,8 +21,7 @@ namespace GhostGame
             rb = GetComponent<Rigidbody2D>();
             if (GlobalControl.Instance.savedPlayerData.position != null)
             {
-                localPlayerData = GlobalControl.Instance.savedPlayerData;
-                transform.position = localPlayerData.position;
+                transform.position = GlobalControl.Instance.savedPlayerData.position;
             }
         }
 

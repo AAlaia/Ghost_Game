@@ -12,33 +12,26 @@ namespace GhostGame
         [SerializeField] Text text; 
         [SerializeField] GameObject startGame; 
         [SerializeField] GameObject reward; 
-        private bool didInteract = false; 
         public bool finishedGame = false;  
 
 
         void Update()
         {
-            if(didInteract)
-            {
-                if(Input.GetKeyDown(KeyCode.Space))
-                {
-                    startGame.SetActive(true); 
-                }
-            }
+
             if (isInteract)
             {
                 if (finishedGame)
                 {
+                    
                     int num = GlobalControl.Instance.savedPlayerData.fruitCollection; 
                     if (num < 5)
                     {
-                        SceneManager.LoadScene(8); 
+                        SceneManager.LoadScene(3); 
                     }
                     else
                     {
                         gameObject.GetComponent<GhostObjective>().ActiveObjectiveCompleted(); 
-                        reward.SetActive(true); 
-                        didInteract = false;
+                        reward.SetActive(true);
                     }
                 }
                 else
@@ -47,7 +40,7 @@ namespace GhostGame
                     if(Input.GetKeyDown(KeyCode.E))
                     {
                         gameObject.GetComponent<GhostObjective>().ActivateGhostDialogue(); 
-                        didInteract = true; 
+                        startGame.SetActive(true);    
                     }
                 }
             }

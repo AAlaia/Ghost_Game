@@ -7,44 +7,50 @@ namespace GhostGame
     public class ObstacleGhost : MonoBehaviour
     {
         [SerializeField] private GameObject target; 
-        public GhostPath path; 
+        [SerializeField] GhostPath path; 
         float speed = 3f;
         int index = 0; 
         public CharacterController controller; 
         public Animator animator; 
         Vector2 movement; 
         private bool trigEvent = false; 
+        private bool followPathInfinitely = true; 
         Health health; 
 
         // Start is called before the first frame update
         void Start()
         {
-            path = FindObjectOfType<GhostPath>();
+            // path = FindObjectOfType<GhostPath>();
             StartCoroutine(FollowPath()); 
         }
 
         IEnumerator FollowPath()
         {
             Vector3 target; 
-            while(path.TryGetPoints(index, out target))
+            while(followPathInfinitely)
             {
-                Vector3 start = transform.position; 
-
-                float maxDistance = Mathf.Min(speed * Time.deltaTime, (target - start).magnitude); 
-                transform.position = Vector3.MoveTowards(start, target, maxDistance);
-
-                // Rotate towards next point
-                // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target - start), 0.05f);  
-                if (transform.position == target) 
+                while(path.TryGetPoints(index, out target))
                 {
-                    index++;
-                } 
-                yield return null;
-                if (trigEvent == true)
-                {
-                    yield break; 
+                    Vector3 start = transform.position; 
+
+                    float maxDistance = Mathf.Min(speed * Time.deltaTime, (target - start).magnitude); 
+                    transform.position = Vector3.MoveTowards(start, target, maxDistance);
+
+                    // Rotate towards next point
+                    // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target - start), 0.05f);  
+                    if (transform.position == target) 
+                    {
+                        index++;
+                    } 
+                    yield return null;
+                    if (trigEvent == true)
+                    {
+                        yield break; 
+                    }
                 }
+                index = 0; 
             }
+
         } 
 
         void Update()

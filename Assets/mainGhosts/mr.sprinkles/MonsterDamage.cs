@@ -7,7 +7,6 @@ namespace GhostGame
     public class MonsterDamage : MonoBehaviour
     {
         Health player; 
-        public Animator animator; 
         void Start()
         {
 
@@ -20,13 +19,7 @@ namespace GhostGame
             {
                 player.health -= 10; 
             }
-            animator.Play("monsterBite"); 
 
-        }
-
-        void OnCollisionExit2D(Collision2D other)
-        {
-            animator.Play("idleMonster");
         }
     }
 

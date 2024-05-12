@@ -204,7 +204,9 @@ namespace GhostGame
                 piecesCorrect++;
                 if (piecesCorrect == pieces.Count)
                 {
-                    SceneManager.LoadScene("DestineysScene");
+                    GlobalControl.Instance.savedPlayerData.fixedPhoto = true; 
+                    GlobalControl.Instance.savedPlayerData.respawnAfterPhoto = true; 
+                    SceneManager.LoadScene("Entrance");
                 }
             }
         }

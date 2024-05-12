@@ -6,6 +6,13 @@ namespace GhostGame
 {
     public class Fruit : MonoBehaviour
     {
+        void Update()
+        {
+            if (GlobalControl.Instance.savedPlayerData.stopSpawningFruit)
+            {
+                Destroy(gameObject); 
+            }
+        }
 
         void OnTriggerEnter2D(Collider2D other)
         {

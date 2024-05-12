@@ -11,6 +11,10 @@ namespace GhostGame
         public InvManager inventory; 
 
         public int fruitCollection = 0; 
+        public bool fixedPhoto = false; 
+        public bool respawnAfterPhoto = false; 
+        public bool stopSpawningFruit = false; 
+        public bool endingAchieved = false;  
     }
 
 }
