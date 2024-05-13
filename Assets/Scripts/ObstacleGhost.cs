@@ -20,35 +20,34 @@ namespace GhostGame
         // Start is called before the first frame update
         void Start()
         {
-            // path = FindObjectOfType<GhostPath>();
             StartCoroutine(FollowPath()); 
         }
 
         IEnumerator FollowPath()
         {
             Vector3 target; 
-            while(followPathInfinitely)
+            while(path.TryGetPoints(index, out target))
             {
-                while(path.TryGetPoints(index, out target))
+                Vector3 start = transform.position; 
+
+                float maxDistance = Mathf.Min(speed * Time.deltaTime, (target - start).magnitude); 
+                transform.position = Vector3.MoveTowards(start, target, maxDistance);
+
+                // Rotate towards next point
+                // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target - start), 0.05f);  
+                if (transform.position == target) 
                 {
-                    Vector3 start = transform.position; 
-
-                    float maxDistance = Mathf.Min(speed * Time.deltaTime, (target - start).magnitude); 
-                    transform.position = Vector3.MoveTowards(start, target, maxDistance);
-
-                    // Rotate towards next point
-                    // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target - start), 0.05f);  
-                    if (transform.position == target) 
-                    {
-                        index++;
-                    } 
-                    yield return null;
-                    if (trigEvent == true)
-                    {
-                        yield break; 
-                    }
+                    index++;
+                } 
+                yield return null;
+                if (index == path.points.Count)
+                {
+                    index = 0; 
                 }
-                index = 0; 
+                if (trigEvent == true)
+                {
+                    yield break; 
+                }
             }
 
         } 
@@ -67,7 +66,7 @@ namespace GhostGame
         {
             trigEvent = true; 
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-            health.tryDamage(other.gameObject, 2);
+            // health.tryDamage(other.gameObject, 2);
         }
 
         public void OnTriggerExit2D(Collider2D other)

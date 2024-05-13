@@ -252,7 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableName: {fileID: 1125561340}
-  scene: 13
+  spawner: {fileID: 0}
+  doorOpen: {fileID: 0}
 --- !u!212 &561126760
 SpriteRenderer:
   m_ObjectHideFlags: 0

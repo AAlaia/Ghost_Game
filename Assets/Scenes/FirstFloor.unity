@@ -278,8 +278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableName: {fileID: 451152599}
-  scene: 0
   itemNeeded: Oink Oink
+  spawner: {fileID: 0}
+  doorOpen: {fileID: 0}
 --- !u!1001 &451152596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -820,6 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6349dc58a76ccb499f591980201c2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueFinished: 0
 --- !u!114 &822847726
 MonoBehaviour:
   m_ObjectHideFlags: 0

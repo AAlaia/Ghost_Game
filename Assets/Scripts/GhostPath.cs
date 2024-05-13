@@ -6,7 +6,7 @@ namespace GhostGame
 {
     public class GhostPath : MonoBehaviour
 {
-    private List<Vector3> points = new List<Vector3>();
+    public List<Vector3> points = new List<Vector3>();
 
     void Awake()
     {
@@ -27,8 +27,7 @@ namespace GhostGame
 
             child.SetActive(false);
         }  
-        points.Clear(); 
-        GetPoints(); 
+       
     }
 
     public bool TryGetPoints(int index, out Vector3 point)
@@ -38,6 +37,7 @@ namespace GhostGame
 
         point = points[index];
         return true;
+
     }
 }
 }

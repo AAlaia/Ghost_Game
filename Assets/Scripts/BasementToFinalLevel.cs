@@ -11,6 +11,7 @@ namespace GhostGame
         [SerializeField] private Text interactableName;
         [SerializeField] private string itemNeeded;
         [SerializeField] private AudioSource doorOpen; 
+        [SerializeField] private GameObject fadeIn; 
         private string interactionText = "Interact [E]";
 
         private bool isOpened = false;
@@ -25,18 +26,8 @@ namespace GhostGame
         {
             mgr = FindObjectOfType<InvManager>(); 
         }
-        void Update()
-        {
-            if (isOpened)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    SceneManager.LoadScene(2); 
-                    doorOpen.enabled = true; 
-                }
-            }
-        }
-        void OnTriggerEnter2D(Collider2D other)
+
+        void OnTriggerStay2D(Collider2D other)
         { 
             interactableName.text = interactionText;
             searchForItem(); 
@@ -50,6 +41,13 @@ namespace GhostGame
                 gameObject.GetComponent<DialogueActiviation>().ActivateDialogue(); 
                 interactableName.text = "Interact [E]"; 
             
+            }
+            if (isOpened)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                { 
+                    fadeIn.SetActive(true); 
+                }
             }
             GlobalControl.Instance.savedPlayerData.position = transform.position; 
     }

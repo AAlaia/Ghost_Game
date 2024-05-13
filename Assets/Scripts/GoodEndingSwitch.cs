@@ -18,7 +18,7 @@ namespace GhostGame
             
             if (end.remainingTime < 0)
             {
-                SceneManager.LoadScene(7); 
+                SceneManager.LoadScene(3); 
             }
         }
     }

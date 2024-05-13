@@ -12,7 +12,7 @@ namespace GhostGame
 
         void Start()
         {
-            timer = Random.Range(1f,2f); 
+            timer = Random.Range(0f,1f); 
         }
 
         void Update()
@@ -30,7 +30,7 @@ namespace GhostGame
                 {
                     SpawnGhost(); 
                 }
-                timer = Random.Range(3.0f, 6.0f);
+                timer = Random.Range(0f, 2f);
             }
         }
 
