@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasementObstacleMovement : MonoBehaviour
 {
-    public float speed = 20f; 
+    public float speed = 12f; 
     public float stop = 1.83f; 
     // Start is called before the first frame update
     void Start()

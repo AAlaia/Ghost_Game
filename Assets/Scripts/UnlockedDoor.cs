@@ -25,7 +25,7 @@ namespace GhostGame
             if (Input.GetKeyDown(KeyCode.E))
             {
                 player.transform.position = spawner.transform.position; 
-                doorOpen.enabled = true; 
+                doorOpen.Play(); 
             }
         }
     }

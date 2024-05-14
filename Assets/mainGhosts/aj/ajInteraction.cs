@@ -24,9 +24,9 @@ namespace GhostGame
                 {
                     
                     int num = GlobalControl.Instance.savedPlayerData.fruitCollection; 
-                    if (num < 5)
+                    if (num < 15)
                     {
-                        SceneManager.LoadScene(3); 
+                        SceneManager.LoadScene(5); 
                     }
                     else
                     {

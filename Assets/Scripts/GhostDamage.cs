@@ -5,22 +5,16 @@ using UnityEngine;
 namespace GhostGame
 {
     public class GhostDamage : MonoBehaviour
-    {
-        void OnTriggerEnter2D()
-        {
-            StartCoroutine(dealDamage()); 
-        }
+    {   
+        Health player; 
 
-        void OnTriggerExit2D()
+        void OnTriggerEnter2D(Collider2D other)
         {
-            StopCoroutine(dealDamage()); 
-        }
+           player = other.gameObject.GetComponent<Health>(); 
+           player.health -= 10; 
 
-        private IEnumerator dealDamage()
-        {
-            GlobalControl.Instance.savedPlayerData.health =- 5; 
-            yield return new WaitForSeconds(5); 
         }
+ 
     }
 
 }

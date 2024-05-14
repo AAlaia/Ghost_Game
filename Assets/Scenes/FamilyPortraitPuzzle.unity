@@ -294,7 +294,7 @@ MonoBehaviour:
   gameHolder: {fileID: 763361009}
   piecePrefab: {fileID: 8322762575383014006, guid: 8ed34d4796013854dbf4cc3ca683b3b7, type: 3}
   imageTextures:
-  - {fileID: 2800000, guid: 5bfcb593731c81f44bd037fad29de8d3, type: 3}
+  - {fileID: 2800000, guid: 90cd9abdcc5c4734e9897d468f6c1e41, type: 3}
   levelSelectPanel: {fileID: 339177490}
   levelSelectPrefab: {fileID: 4731666870739656621, guid: d105844dc1acdac42a99389c527c390d, type: 3}
 --- !u!4 &416125503
