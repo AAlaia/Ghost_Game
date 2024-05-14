@@ -26,7 +26,16 @@ namespace GhostGame
         {
             mgr = FindObjectOfType<InvManager>(); 
         }
-
+        void Update()
+        {
+            if (isOpened)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                { 
+                    fadeIn.SetActive(true); 
+                }
+            }
+        }
         void OnTriggerStay2D(Collider2D other)
         { 
             interactableName.text = interactionText;
@@ -42,14 +51,7 @@ namespace GhostGame
                 interactableName.text = "Interact [E]"; 
             
             }
-            if (isOpened)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                { 
-                    fadeIn.SetActive(true); 
-                }
-            }
-            GlobalControl.Instance.savedPlayerData.position = transform.position; 
+            // GlobalControl.Instance.savedPlayerData.position = transform.position; 
     }
     
         void OnTriggerExit2D(Collider2D other)

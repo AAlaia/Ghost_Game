@@ -155,6 +155,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &24072756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6936711417113125762, guid: 2e09a4992e0341a42aa160d3b43d2a68, type: 3}
+  m_PrefabInstance: {fileID: 1480955593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24072739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a2a8375f41e2b8418832faf17f4f754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &62700654
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +934,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &700210874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700210876}
+  - component: {fileID: 700210875}
+  m_Layer: 0
+  m_Name: SpawnHere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &700210875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700210874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c085a38fe52881a439c5219db2334cf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 24072756}
+--- !u!4 &700210876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700210874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.21, y: -5.76, z: 0.029349104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &702717217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,7 +2094,7 @@ GameObject:
   - component: {fileID: 1464715328}
   - component: {fileID: 1464715327}
   m_Layer: 0
-  m_Name: ObstacleSpawnerSideTwo
+  m_Name: ObstacleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2056,8 +2112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6faa492f808f1a479d2a9383b2ed45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 6625863258450455654, guid: e960f7232c91c1b42b76915abc39856c, type: 3}
-  obstacleGhost: {fileID: 1097142195766151772, guid: 9b6291bcdb2b59d43922f71268abf021, type: 3}
+  obstacles:
+  - {fileID: 1915729195504455590, guid: 187a79cb8628ab04caa55c1f3602e9d5, type: 3}
+  - {fileID: 4480435996352208562, guid: ba79e24cc81da6847bba322fc0bceee5, type: 3}
+  - {fileID: 3391126546576652512, guid: 45ffef3fdc9c51f45bbe001d66daf300, type: 3}
+  - {fileID: 6597492656345899876, guid: 9f05d5785b21548499ca3be0440c0a36, type: 3}
   timer: 1
 --- !u!4 &1464715328
 Transform:
@@ -2087,11 +2146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6936711417113125761, guid: 2e09a4992e0341a42aa160d3b43d2a68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.67
+      value: -11.1
       objectReference: {fileID: 0}
     - target: {fileID: 6936711417113125761, guid: 2e09a4992e0341a42aa160d3b43d2a68, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.71
+      value: -4.94
       objectReference: {fileID: 0}
     - target: {fileID: 6936711417113125761, guid: 2e09a4992e0341a42aa160d3b43d2a68, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2136,7 +2195,7 @@ PrefabInstance:
     - target: {fileID: 6936711417113125884, guid: 2e09a4992e0341a42aa160d3b43d2a68, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 0ae045f26fb4f3d4c8a940a79db06e56, type: 2}
+      objectReference: {fileID: 9100000, guid: 08f874bb2be5810409f5175c16cda162, type: 2}
     - target: {fileID: 6936711417113125885, guid: 2e09a4992e0341a42aa160d3b43d2a68, type: 3}
       propertyPath: m_Size.x
       value: 0.766363

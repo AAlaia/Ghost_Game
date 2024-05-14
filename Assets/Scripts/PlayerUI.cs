@@ -10,7 +10,7 @@ namespace GhostGame
     {
         Health playerHealth;
         public Image [] blocks;
-        int healthNum = 0;
+        double healthNum = 0;
 
         void Start()
         {

@@ -16,14 +16,14 @@ namespace GhostGame
         Inventory mgr; 
 
         // Start is called before the first frame update
-        void Start()
+        /*void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             if (GlobalControl.Instance.savedPlayerData.position != null)
             {
                 transform.position = GlobalControl.Instance.savedPlayerData.position;
             }
-        }
+        }*/
 
         // Update is called once per frame
         void Update()
@@ -38,10 +38,6 @@ namespace GhostGame
             Vector2 horizMoveDirection = Vector2.right * speed * horizontalInput * Time.deltaTime;  
             Vector2 vertMoveDirection = Vector2.up * speed * verticalInput * Time.deltaTime;
 
-            /* rb.AddForce(horizMoveDirection); 
-            rb.AddForce(vertMoveDirection); */ 
-
-            //focuses on changing player movement depending on direction
 
             transform.Translate(horizMoveDirection);
             transform.Translate(vertMoveDirection); 

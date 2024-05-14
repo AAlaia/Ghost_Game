@@ -6,8 +6,8 @@ namespace GhostGame
 {
     public class PlayerStatistics
     {
-        public Vector3 position; 
-        public int health = 50;
+        // public Vector3 position; 
+        public double health = 100;
         public InvManager inventory; 
 
         public int fruitCollection = 0; 

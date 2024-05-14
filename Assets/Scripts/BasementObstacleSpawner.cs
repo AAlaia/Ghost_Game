@@ -6,8 +6,7 @@ namespace GhostGame
 {
     public class BasementObstacleSpawner : MonoBehaviour
     {
-        public GameObject obstaclePrefab; 
-        public GameObject obstacleGhost; 
+         public GameObject[] obstacles; 
         public float timer; 
 
         void Start()
@@ -21,27 +20,10 @@ namespace GhostGame
 
             if (timer <= 0f)
             {
-                int changer = Random.Range(0, 2); 
-                if (changer == 0)
-                {
-                    SpawnObstacle();
-                }
-                else
-                {
-                    SpawnGhost(); 
-                }
-                timer = Random.Range(0f, 2f);
+                int index = Random.Range(0, 4); 
+                Instantiate(obstacles[index], transform.position, Quaternion.identity); 
+                timer = Random.Range(0f, 2f); 
             }
-        }
-
-        void SpawnObstacle()
-        {
-            Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
-        }
-        
-        void SpawnGhost()
-        {
-            Instantiate(obstacleGhost, transform.position, Quaternion.identity); 
         }
 
     }

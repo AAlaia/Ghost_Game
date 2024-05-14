@@ -10,7 +10,6 @@ namespace GhostGame
         [SerializeField] GhostPath path; 
         float speed = 3f;
         int index = 0; 
-        public CharacterController controller; 
         public Animator animator; 
         Vector2 movement; 
         private bool trigEvent = false; 
@@ -32,9 +31,7 @@ namespace GhostGame
 
                 float maxDistance = Mathf.Min(speed * Time.deltaTime, (target - start).magnitude); 
                 transform.position = Vector3.MoveTowards(start, target, maxDistance);
-
-                // Rotate towards next point
-                // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(target - start), 0.05f);  
+ 
                 if (transform.position == target) 
                 {
                     index++;
@@ -66,7 +63,6 @@ namespace GhostGame
         {
             trigEvent = true; 
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-            // health.tryDamage(other.gameObject, 2);
         }
 
         public void OnTriggerExit2D(Collider2D other)

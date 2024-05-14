@@ -53,7 +53,7 @@ namespace GhostGame
             interactableName.text = "Interact [E]"; 
             
         }
-        GlobalControl.Instance.savedPlayerData.position = transform.position; 
+        // GlobalControl.Instance.savedPlayerData.position = transform.position; 
     }
     
     void OnTriggerExit2D(Collider2D other)
