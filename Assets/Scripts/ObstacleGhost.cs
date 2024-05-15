@@ -13,9 +13,6 @@ namespace GhostGame
         public Animator animator; 
         Vector2 movement; 
         private bool trigEvent = false; 
-        private bool followPathInfinitely = true; 
-        Health health; 
-
         // Start is called before the first frame update
         void Start()
         {

@@ -15,16 +15,6 @@ namespace GhostGame
         Vector2 movement;
         Inventory mgr; 
 
-        // Start is called before the first frame update
-        /*void Start()
-        {
-            rb = GetComponent<Rigidbody2D>();
-            if (GlobalControl.Instance.savedPlayerData.position != null)
-            {
-                transform.position = GlobalControl.Instance.savedPlayerData.position;
-            }
-        }*/
-
         // Update is called once per frame
         void Update()
         {

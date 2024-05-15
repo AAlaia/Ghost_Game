@@ -5,7 +5,7 @@ namespace GhostGame
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerJump : MonoBehaviour
     {
-        float jumpForce = 15f; 
+        float jumpForce = 11f; 
         public bool isGrounded = false; 
         public Rigidbody2D rigidbody2D;
 
