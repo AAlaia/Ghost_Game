@@ -10680,6 +10680,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5188550739699481072, guid: d840706425f0390488f6813bdb04a2f0, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5188550739699481073, guid: d840706425f0390488f6813bdb04a2f0, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5188550739699481074, guid: d840706425f0390488f6813bdb04a2f0, type: 3}
       propertyPath: m_Name
       value: Canvas

@@ -8854,6 +8854,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5188550739699481072, guid: d840706425f0390488f6813bdb04a2f0, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5188550739699481074, guid: d840706425f0390488f6813bdb04a2f0, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -65932,7 +65936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7921569}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.42352942}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -68171,7 +68175,7 @@ PrefabInstance:
     - target: {fileID: 3711763930083199040, guid: b26263dff239ac34faa547f0b7fc03dd, type: 3}
       propertyPath: interactableName
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1549975422}
     - target: {fileID: 9102027255550028907, guid: b26263dff239ac34faa547f0b7fc03dd, type: 3}
       propertyPath: m_Name
       value: SideDoor2 (2)
